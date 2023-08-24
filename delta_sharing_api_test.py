@@ -1,11 +1,11 @@
 import requests
 
 # Define the Databricks domain and endpoint
-DATABRICKS_DOMAIN = "https://dbc-64aa1604-7419.dev.databricks.com"
+DATABRICKS_DOMAIN = "<workspace-url>"
 ENDPOINT = "/api/2.1/unity-catalog/shares"
 
 # Your personal access token or API token
-TOKEN = "Bearer dapi1b05f73b8ee741eccd1de61430a8fd47"
+TOKEN = "<bear token>"
 
 # Set up the headers for the request
 headers = {
