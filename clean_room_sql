@@ -1,12 +1,14 @@
+
 mc_clean_rooms:
-    select hex(id), hex(metastore_id), hex(central_clean_room_id), hex(central_clean_room_metastore_id), name, owner, metastore_principal, created_by from mc_clean_rooms;
+    select hex(id), hex(metastore_id), hex(central_clean_room_id), hex(central_clean_room_metastore_id), name, owner, metastore_principal, created_by from mc_clean_rooms where name = "";
+    DELETE FROM mc_clean_rooms WHERE deleted_at != '1970-01-01 01:00:01.000';
 
 mc_catalogs:
-    select hex(id), hex(metastore_id), name, owner from mc_catalogs;
+    select hex(id), hex(metastore_id), name, owner from mc_catalogs where name = "";
 
 mc_central_clean_room_stations:
     select hex(central_clean_room_id), name, notebook_collaborator, station_metastore_status,collaborator_shares_status,station_workspace_status,station_workspace_principal_status,notebook_status,notebook_job_run_status from mc_central_clean_room_stations where name='test-station7';
 
-    update mc_central_clean_room_stations set station_metastore_status = 'ACTIVE', station_workspace_status='ACTIVE', station_metastore_id=0xF78595070E58485CAA5B85162060AD52, station_workspace_id=8076927860044214 where name='test-station5';
-
+    update mc_central_clean_room_stations set station_metastore_status = 'ACTIVE', station_workspace_status='ACTIVE', station_metastore_id=0x2e5e04fcde9048258ae8778b991d88d8, station_workspace_id=3755576591151971 where name='test-station';
+ 
     select hex(central_clean_room_id), hex(station_metastore_id), name, notebook_collaborator, station_metastore_status,collaborator_shares_status,station_workspace_status,station_workspace_principal_status,notebook_status,notebook_job_run_status from mc_central_clean_room_stations where name='test-station7';
